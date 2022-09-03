@@ -46,6 +46,7 @@
   border: 3px solid #f1f1f1;
   margin: 0 5px;
   background: #f1f1f1;
+  cursor: pointer;
 }
 
 .dot.active {

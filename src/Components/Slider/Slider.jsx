@@ -2,6 +2,7 @@ import { useState } from 'react';
 import './Slider.css';
 import dataSlider from './dataSlider';
 import BtnSlider from '../BtnSlider/BtnSlider';
+import { v4 as uuidv4 } from "uuid";
 
 function Slider(){
 
@@ -66,6 +67,17 @@ function Slider(){
             })}
             <BtnSlider moveSlide={nextSlide} direction={'next'}/>
             <BtnSlider moveSlide={prevSlide} direction={'prev'}/>
+
+            <div className='container-dots'>
+                {Array.from({length: 5}).map((item, index) => {
+                    return (
+                        <div
+                        onClick={() => setSlideAnim({index: index + 1})}
+                        key={uuidv4()}
+                        className={slideAnim.index === index + 1 ? 'dot active' : 'dot'} ></div>
+                    )
+                })}
+            </div>
         </div>
     )
 
